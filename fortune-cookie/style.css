@@ -1,0 +1,192 @@
+:root {
+    --cookie-color: #f7d794;
+    --cookie-dark: #ccae62;
+    --paper-color: #fff9e6;
+    --bg-dark: #0f171e;
+    --accent: #ff4d6d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #1a2a3a, #050505);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.ambient-light {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05), transparent 70%);
+    pointer-events: none;
+}
+
+.cookie-container {
+    perspective: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    cursor: pointer;
+}
+
+.cookie {
+    position: relative;
+    width: 220px;
+    height: 160px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cookie:hover:not(.broken) {
+    transform: scale(1.1) rotateY(10deg);
+}
+
+.left-half,
+.right-half {
+    position: absolute;
+    width: 130px;
+    height: 160px;
+    background: var(--cookie-color);
+    box-shadow: inset -5px -5px 30px rgba(0, 0, 0, 0.2),
+        inset 5px 5px 30px rgba(255, 255, 255, 0.2),
+        0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.left-half {
+    left: 0;
+    border-radius: 120px 40px 40px 120px;
+    clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%);
+    background: linear-gradient(135deg, var(--cookie-color), var(--cookie-dark));
+}
+
+.right-half {
+    right: 0;
+    border-radius: 40px 120px 120px 40px;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 25% 100%, 0 50%);
+    background: linear-gradient(225deg, var(--cookie-color), var(--cookie-dark));
+}
+
+/* Breaking Animation */
+.cookie.broken .left-half {
+    transform: translateX(-120px) rotateY(-45deg) rotateZ(-15deg) translateY(20px);
+    opacity: 0.6;
+}
+
+.cookie.broken .right-half {
+    transform: translateX(120px) rotateY(45deg) rotateZ(15deg) translateY(20px);
+    opacity: 0.6;
+}
+
+/* Fortune Slip */
+.fortune-slip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    background: var(--paper-color);
+    color: #2c3e50;
+    padding: 20px 30px;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(0) rotateX(90deg);
+    opacity: 0;
+    transition: all 0.8s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    border-top: 4px solid var(--accent);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 100% 4px;
+}
+
+.cookie.broken .fortune-slip {
+    transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateZ(-2deg);
+    opacity: 1;
+    animation: wobble 3s ease-in-out infinite alternate;
+}
+
+@keyframes wobble {
+    from {
+        transform: translate(-50%, -50%) scale(1) rotateZ(-2deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1) rotateZ(2deg);
+    }
+}
+
+#fortune-text {
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.lucky-numbers {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.instruction {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+#reset-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#reset-btn:hover {
+    background: white;
+    color: black;
+}
+
+.crumb {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: var(--cookie-dark);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hidden {
+    display: none !important;
+}

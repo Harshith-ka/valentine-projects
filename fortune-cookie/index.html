@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Destiny | Fortune Cookie</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="stars"></div>
+    <div class="ambient-light"></div>
+
+    <div class="cookie-container" id="cookie-wrapper">
+        <div class="cookie" id="main-cookie">
+            <div class="left-half"></div>
+            <div class="right-half"></div>
+            <div class="fortune-slip" id="slip">
+                <p id="fortune-text">Searching for your fate...</p>
+                <div class="lucky-numbers">Lucky Numbers: 7, 14, 21, 28</div>
+            </div>
+        </div>
+        <p class="instruction">Tap the cookie to reveal your fortune...</p>
+        <button id="reset-btn" class="hidden">Crack Another</button>
+    </div>
+
+    <div id="crumb-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

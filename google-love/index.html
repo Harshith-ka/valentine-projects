@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://www.google.com/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Homepage View -->
+    <div id="homepage" class="view">
+        <header>
+            <nav>
+                <a href="#">Gmail</a>
+                <a href="#">Images</a>
+                <button class="apps-btn"><svg focusable="false" viewBox="0 0 24 24">
+                        <path
+                            d="M6,8c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S4.9,8,6,8z M12,20c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S10.9,20,12,20z M6,20 c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S4.9,20,6,20z M6,14c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S4.9,14,6,14z M12,14c1.1,0,2-0.9,2-2 s-0.9-2-2-2s-2,0.9-2,2S10.9,14,12,14z M16,6c0,1.1,0.9,2,2,2s2-0.9,2-2s-0.9-2-2-2S16,4.9,16,6z M12,8c1.1,0,2-0.9,2-2s-0.9-2-2-2 s-2,0.9-2,2S10.9,8,12,8z M18,14c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S16.9,14,18,14z M18,20c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2 S16.9,20,18,20z">
+                        </path>
+                    </svg></button>
+                <button class="sign-in">Sign in</button>
+            </nav>
+        </header>
+
+        <main class="home-main">
+            <div class="logo">
+                <span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span
+                    class="l">l</span><span class="e">e</span>
+            </div>
+
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <span class="search-icon"><svg focusable="false" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                            </path>
+                        </svg></span>
+                    <input type="text" id="search-input" autofocus autocomplete="off">
+                    <div class="search-btns-right">
+                        <span class="voice-icon">
+                            <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                style="width:24px;height:24px">
+                                <path d="m12 15c1.66 0 3-1.34 3-3v-6c0-1.66-1.34-3-3-3s-3 1.34-3 3v6c0 1.66 1.34 3 3 3z"
+                                    fill="#4285f4"></path>
+                                <path
+                                    d="m11 18.08v3.92h2v-3.92c3.38-.49 6-3.39 6-6.91h-2c0 2.76-2.24 5-5 5s-5-2.24-5-5h-2c0 3.52 2.62 6.42 6 6.91z"
+                                    fill="#34a853"></path>
+                                <path
+                                    d="m12 15c.66 0 1.2-.54 1.2-1.2v-7.6c0-.66-.54-1.2-1.2-1.2s-1.2.54-1.2 1.2v7.6c0 .66.54 1.2 1.2 1.2z"
+                                    fill="#fbbc05"></path>
+                                <path
+                                    d="m12 14c.46 0 .83-.37.83-.83v-7.34c0-.46-.37-.83-.83-.83s-.83.37-.83.83v7.34c0 .46.37.83.83.83z"
+                                    fill="#ea4335"></path>
+                            </svg>
+                        </span>
+                        <span class="lens-icon">
+                            <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                style="width:24px;height:24px">
+                                <path
+                                    d="m7 12c0 2.76 2.24 5 5 5s5-2.24 5-5-2.24-5-5-5-5 2.24-5 5zm10 0c0 2.76-2.24 5-5 5s-5-2.24-5-5 2.24-5 5-5 5 2.24 5 5z"
+                                    fill="#4285f4"></path>
+                                <path
+                                    d="m12 17c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0-10c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5z"
+                                    fill="#34a853"></path>
+                                <path d="m12 14c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" fill="#fbbc05"></path>
+                                <path
+                                    d="m12 7c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"
+                                    fill="#ea4335"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <!-- Suggestions Dropdown -->
+                <div id="suggestions" class="suggestions hidden">
+                    <!-- Suggestions will be injected here -->
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="search-btn">Google Search</button>
+                <button id="lucky-btn">I'm Feeling Lucky</button>
+            </div>
+
+            <div class="languages">
+                Google offered in: <a href="#">हिन्दी</a> <a href="#">বাংলা</a> <a href="#">తెలుగు</a> <a
+                    href="#">मराठी</a> <a href="#">தமிழ்</a> <a href="#">ગુજરાતી</a>
+            </div>
+        </main>
+
+        <footer>
+            <div class="country">India</div>
+            <div class="bottom-links">
+                <div class="left">
+                    <a href="#">About</a>
+                    <a href="#">Advertising</a>
+                    <a href="#">Business</a>
+                    <a href="#">How Search works</a>
+                </div>
+                <div class="right">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Settings</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Results View -->
+    <div id="results-page" class="view hidden">
+        <header class="results-header">
+            <div class="top-row">
+                <div class="logo-small">
+                    <span class="g">G</span><span class="o1">o</span><span class="o2">o</span><span
+                        class="g2">g</span><span class="l">l</span><span class="e">e</span>
+                </div>
+                <div class="search-box-small">
+                    <input type="text" id="search-input-small" value="Who loves Priya?">
+                    <div class="icons-small">
+                        <span class="clear-icon">✕</span>
+                        <span class="divider">|</span>
+                        <span class="mic-small">
+                            <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                style="width:20px;height:20px">
+                                <path d="m12 15c1.66 0 3-1.34 3-3v-6c0-1.66-1.34-3-3-3s-3 1.34-3 3v6c0 1.66 1.34 3 3 3z"
+                                    fill="#4285f4"></path>
+                                <path
+                                    d="m11 18.08v3.92h2v-3.92c3.38-.49 6-3.39 6-6.91h-2c0 2.76-2.24 5-5 5s-5-2.24-5-5h-2c0 3.52 2.62 6.42 6 6.91z"
+                                    fill="#34a853"></path>
+                            </svg>
+                        </span>
+                        <span class="lens-small">
+                            <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                style="width:20px;height:20px">
+                                <path d="m12 17c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z" fill="#4285f4">
+                                </path>
+                                <path
+                                    d="m12 7c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5zm0 10c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z"
+                                    fill="#ea4335"></path>
+                            </svg>
+                        </span>
+                        <span class="blue-search"><svg focusable="false" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                </path>
+                            </svg></span>
+                    </div>
+                </div>
+                <div class="results-nav-icons">
+                    <span class="settings-icon">⚙️</span>
+                    <button class="sign-in-small">Sign in</button>
+                    <div class="user-avatar-placeholder">H</div>
+                </div>
+            </div>
+            <nav class="results-tabs">
+                <div class="tab-group">
+                    <div class="tab active"><span class="icon">🔍</span> All</div>
+                    <div class="tab"><span class="icon">🖼️</span> Images</div>
+                    <div class="tab"><span class="icon">🎬</span> Videos</div>
+                    <div class="tab"><span class="icon">📰</span> News</div>
+                    <div class="tab"><span class="icon">📍</span> Maps</div>
+                    <div class="tab"><span class="icon">⋮</span> More</div>
+                </div>
+                <div class="tools-btn">Tools</div>
+            </nav>
+        </header>
+
+        <main class="results-main">
+            <div class="results-content">
+                <div class="left-side">
+                    <p class="stats">About 1,000,000,000 results (0.42 seconds)</p>
+
+                    <!-- Featured Snippet -->
+                    <div class="featured-snippet">
+                        <div class="snippet-content">
+                            <h2 id="confession-text">Harry loves Priya ❤️</h2>
+                            <p class="snippet-desc">According to reliable sources, <b>Harry's</b> affection for
+                                <b>Priya</b> is considered the most significant romantic event of the decade. Expert
+                                analysis indicates eternal devotion and a 100% "Soulmate" rating.
+                            </p>
+                            <br>
+                            <div class="snippet-links">
+                                <a href="#">Why Harry loves Priya</a>
+                                <a href="#">Priya's reaction to Harry</a>
+                            </div>
+                        </div>
+                        <div class="snippet-footer">
+                            <cite>https://www.universal-truth.com › Harry-Loves-Priya</cite>
+                            <div class="snippet-meta">
+                                <a href="#">About this result</a>
+                                <span>•</span>
+                                <a href="#">Feedback</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- People Also Ask -->
+                    <div class="people-also-ask">
+                        <h3>People also ask</h3>
+                        <div class="question-item">Does Harry really love Priya? <span>⌵</span></div>
+                        <div class="question-item">How much does Harry love Priya? <span>⌵</span></div>
+                        <div class="question-item">Are Harry and Priya soulmates? <span>⌵</span></div>
+                    </div>
+
+                    <!-- Search Result -->
+                    <div class="search-result">
+                        <cite>https://www.love-metrics.org › stats</cite>
+                        <a href="#" class="result-title">
+                            <h3>Harry and Priya: A 100% Compatibility Match Found</h3>
+                        </a>
+                        <p>The latest love-metrics data confirms that Harry's heart beats exclusively for Priya.
+                            Features include: constant smiling when thinking of her, heart eyes, and eternal devotion.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Side - Knowledge Panel -->
+                <div class="right-side">
+                    <div class="knowledge-panel">
+                        <div class="panel-header">
+                            <div class="header-text">
+                                <p class="label">Knowledge Panel</p>
+                                <h2>Priya</h2>
+                                <p class="sub-label">Harry's One and Only</p>
+                            </div>
+                            <span class="share-icon">↗️</span>
+                        </div>
+                        <div class="panel-image">
+                            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400&auto=format&fit=crop"
+                                alt="Priya">
+                        </div>
+                        <div class="panel-info">
+                            <p><b>Priya</b> is widely recognized as the most amazing person in Harry's life. Known for
+                                her infectious smile and brilliant personality, she is the sole recipient of Harry's
+                                undivided attention and love.</p>
+                            <hr>
+                            <p><b>Born:</b> In Harry's heart</p>
+                            <p><b>Status:</b> Extremely Loved</p>
+                            <p><b>Partner:</b> Harry (Soulmate)</p>
+                            <p><b>Education:</b> PhD in being wonderful</p>
+                            <hr>
+                            <p class="section-title">People also search for</p>
+                            <div class="related-people">
+                                <div class="person">
+                                    <img src="https://images.unsplash.com/photo-1518889735218-3e3a03ad3128?q=80&w=100&auto=format&fit=crop"
+                                        alt="Harry">
+                                    <p>Harry</p>
+                                </div>
+                                <div class="person">
+                                    <span>💝</span>
+                                    <p>Us Forever</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Searching Animation Overlay -->
+    <div id="searching-overlay" class="hidden">
+        <div class="google-loader">
+            <span class="dot-b"></span>
+            <span class="dot-r"></span>
+            <span class="dot-y"></span>
+            <span class="dot-g"></span>
+        </div>
+        <p>Searching for the truth...</p>
+    </div>
+
+    <div id="confetti-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

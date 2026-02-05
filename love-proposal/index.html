@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message For You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Pacifico&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+    <div class="stars-container" id="stars-container"></div>
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <!-- Interactive Envelope -->
+    <div class="envelope-wrapper" id="envelope-wrapper">
+        <div class="envelope" id="envelope">
+            <div class="front">
+                <div class="seal">❤️</div>
+            </div>
+            <div class="back"></div>
+            <div class="letter">
+                <p>Click to Open</p>
+            </div>
+            <div class="top"></div>
+        </div>
+        <p class="instruction">You have a secret message... tap to open</p>
+    </div>
+
+    <!-- Main Proposal Card (Hidden initially) -->
+    <main class="proposal-card hidden" id="main-card">
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1000&auto=format&fit=crop"
+                alt="Romantic Flowers" class="main-img" id="main-img">
+        </div>
+
+        <h1 class="question">Will you be my Valentine?</h1>
+        <p class="subtitle">I've been thinking about this for a while...</p>
+
+        <div class="button-group" id="button-group">
+            <button id="yes-btn" class="btn yes-btn">Yes, I'd Love To! ❤️</button>
+            <button id="no-btn" class="btn no-btn">No</button>
+        </div>
+    </main>
+
+    <!-- Success Screen -->
+    <div id="success-screen" class="hidden">
+        <div class="success-content">
+            <h1 class="success-message">You made me the happiest! ❤️</h1>
+            <div class="celebration-img">
+                <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1000&auto=format&fit=crop"
+                    alt="Celebration Hearts">
+            </div>
+            <p class="love-note">Forever & Always ✨</p>
+            <button onclick="location.reload()" class="btn yes-btn"
+                style="margin-top: 2rem; font-size: 1rem;">Restart</button>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

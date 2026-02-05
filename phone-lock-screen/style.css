@@ -1,0 +1,437 @@
+:root {
+    --bg-wallpaper: url('https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?q=80&w=1000&auto=format&fit=crop');
+    --glass-bg: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --accent: #ff4d6d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+body {
+    background: #050505;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.phone-frame {
+    width: 375px;
+    height: 812px;
+    background: #000;
+    border-radius: 50px;
+    position: relative;
+    box-shadow: 0 0 0 12px #1a1a1a, 0 30px 100px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    /* Improved scaling for smaller screens */
+    margin: 20px;
+    flex-shrink: 0;
+    transform-origin: center center;
+}
+
+/* Scale down for smaller screens while keeping proportions */
+@media (max-height: 850px) {
+    .phone-frame {
+        transform: scale(0.85);
+    }
+}
+
+@media (max-height: 720px) {
+    .phone-frame {
+        transform: scale(0.75);
+    }
+}
+
+@media (max-height: 620px) {
+    .phone-frame {
+        transform: scale(0.65);
+    }
+}
+
+.wallpaper-container {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background: var(--bg-wallpaper);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s ease-out;
+    z-index: 0;
+}
+
+/* Dynamic Island */
+.dynamic-island-container {
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dynamic-island {
+    width: 120px;
+    height: 35px;
+    background: #000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    color: white;
+    cursor: pointer;
+}
+
+.dynamic-island.expanded {
+    width: 300px;
+    height: 80px;
+    border-radius: 40px;
+}
+
+.island-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.island-icon {
+    font-size: 20px;
+}
+
+/* Status Bar */
+.status-bar {
+    padding: 15px 35px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+}
+
+/* Clock Section */
+.clock-section {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+#time {
+    font-size: 88px;
+    font-weight: 200;
+    letter-spacing: -2px;
+}
+
+#date {
+    font-size: 20px;
+    margin-top: -8px;
+    font-weight: 300;
+}
+
+/* Notification */
+.notification-teaser {
+    padding: 20px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.notif-bubble {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.notif-icon {
+    font-size: 26px;
+}
+
+.notif-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    display: block;
+}
+
+.notif-body {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Shortcuts */
+.lock-shortcuts {
+    position: absolute;
+    bottom: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 45px;
+    z-index: 10;
+}
+
+.shortcut-btn {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shortcut-btn:active {
+    background: white;
+    color: black;
+    transform: scale(0.9);
+}
+
+.shortcut-btn.active {
+    background: white;
+    color: black;
+    box-shadow: 0 0 20px white;
+}
+
+/* Bottom Section & Swipe */
+.bottom-section {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+.swipe-container {
+    width: 310px;
+    height: 64px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 32px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    padding: 6px;
+}
+
+.swipe-handle {
+    width: 52px;
+    height: 52px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: #000;
+    cursor: grab;
+    position: absolute;
+    left: 6px;
+    z-index: 12;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.swipe-text {
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.home-indicator {
+    width: 135px;
+    height: 4.5px;
+    background: white;
+    border-radius: 10px;
+    opacity: 0.6;
+}
+
+/* Home Screen */
+#home-screen {
+    background: linear-gradient(180deg, rgba(255, 77, 109, 0.4), rgba(0, 0, 0, 0.8));
+    backdrop-filter: blur(10px);
+}
+
+.home-content {
+    width: 100%;
+    height: 100%;
+    padding: 80px 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.app-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: #ff4d6d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.app-item:active .app-icon {
+    transform: scale(0.9);
+}
+
+.app-label {
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/* Message Overlay */
+#hidden-message-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2000;
+    width: 90%;
+}
+
+#hidden-message-overlay.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.message-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+#close-message-btn {
+    margin-top: 25px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Dock */
+.dock {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(30px);
+    border-radius: 30px;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#relock-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 11px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Screens */
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.85s cubic-bezier(0.8, 0, 0.2, 1);
+    z-index: 5;
+}
+
+#lock-screen.unlocked {
+    transform: translateY(-100%);
+}
+
+#home-screen {
+    transform: translateY(100%);
+    z-index: 6;
+}
+
+#home-screen.active {
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 400px) {
+    .phone-frame {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+}

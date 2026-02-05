@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locked Secret | Secret Vault</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="stars"></div>
+
+    <!-- Lock Screen -->
+    <div id="lock-screen" class="container active">
+        <div class="lock-card">
+            <div class="lock-icon">
+                <span id="lock-glyph">🔒</span>
+            </div>
+            <h1>Secret Vault</h1>
+            <p>Please enter the secret phrase to unlock the message.</p>
+
+            <div class="input-group">
+                <input type="password" id="password-input" placeholder="Enter secret phrase..." autocomplete="off">
+                <button id="unlock-btn">Unlock</button>
+            </div>
+            <p id="error-msg" class="error hidden">Incorrect phrase. Try again, love.</p>
+
+            <div class="hint">Hint: Our special moment...</div>
+        </div>
+    </div>
+
+    <!-- Secret Message Reveal -->
+    <div id="secret-message" class="container hidden">
+        <div class="message-card">
+            <div class="heart-pulse">❤️</div>
+            <h2 class="reveal-title">Access Granted</h2>
+            <div class="letter-reveal">
+                <p>My Dearest Priya,</p>
+                <p>Since the moment we first met, my life has been filled with a light I never knew existed.</p>
+                <p>Entering this secret vault was just a small step to show you that my heart is a place reserved only
+                    for you. Every memory we share is a treasure I keep under the safest lock and key.</p>
+                <p>I love you more than words can ever describe. ❤️</p>
+                <p class="signature">— Your Harry</p>
+            </div>
+            <button id="back-btn">Lock Vault</button>
+        </div>
+    </div>
+
+    <div id="celebration-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

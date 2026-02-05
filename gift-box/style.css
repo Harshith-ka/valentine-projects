@@ -1,0 +1,306 @@
+:root {
+    --box-color: #e63946;
+    --box-dark: #b92b3a;
+    --ribbon-color: #ffd700;
+    --ribbon-dark: #d4af37;
+    --bg-dark: #1d1d1d;
+    --text-color: #333;
+    --box-size: 200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #2c3e50, #000);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.gift-container {
+    perspective: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.gift-box {
+    width: var(--box-size);
+    height: var(--box-size);
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(30deg);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gift-box.jiggle {
+    animation: jiggle 0.4s ease-in-out infinite;
+}
+
+@keyframes jiggle {
+
+    0%,
+    100% {
+        transform: rotateX(-15deg) rotateY(30deg) scale(1.02);
+    }
+
+    50% {
+        transform: rotateX(-15deg) rotateY(30deg) scale(1.08);
+    }
+}
+
+/* Box Faces */
+.box-body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--box-color);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.box-bottom {
+    transform: rotateX(90deg) translateZ(-100px);
+    background: var(--box-dark);
+}
+
+.box-front {
+    transform: translateZ(100px);
+    transform-origin: bottom;
+}
+
+.box-back {
+    transform: translateZ(-100px) rotateY(180deg);
+    transform-origin: bottom;
+}
+
+.box-left {
+    transform: translateX(-100px) rotateY(-90deg);
+    transform-origin: bottom;
+}
+
+.box-right {
+    transform: translateX(100px) rotateY(90deg);
+    transform-origin: bottom;
+}
+
+/* Unfolding logic */
+.gift-box.open .box-front {
+    transform: translateZ(100px) rotateX(90deg);
+    background: var(--box-dark);
+    opacity: 0.8;
+}
+
+.gift-box.open .box-back {
+    transform: translateZ(-100px) rotateY(180deg) rotateX(90deg);
+    background: var(--box-dark);
+    opacity: 0.8;
+}
+
+.gift-box.open .box-left {
+    transform: translateX(-100px) rotateY(-90deg) rotateX(90deg);
+    background: var(--box-dark);
+    opacity: 0.8;
+}
+
+.gift-box.open .box-right {
+    transform: translateX(100px) rotateY(90deg) rotateX(90deg);
+    background: var(--box-dark);
+    opacity: 0.8;
+}
+
+/* Ribbons on Every Face */
+.ribbon-v-body,
+.ribbon-h-body {
+    position: absolute;
+    background: var(--ribbon-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ribbon-v-body {
+    width: 40px;
+    height: 100%;
+    left: 80px;
+}
+
+.ribbon-h-body {
+    width: 100%;
+    height: 40px;
+    top: 80px;
+}
+
+/* Lid Styling - Wider to wrap the top edges */
+.lid {
+    position: absolute;
+    width: 210px;
+    height: 40px;
+    top: -10px;
+    left: -5px;
+    transform-style: preserve-3d;
+    z-index: 10;
+    transition: all 0.7s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.box-top {
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: var(--box-color);
+    transform: rotateX(90deg) translateZ(105px);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.bow {
+    position: absolute;
+    top: -25px;
+    left: 75px;
+    width: 60px;
+    height: 60px;
+    background: var(--ribbon-color);
+    border-radius: 50% 50% 0 50%;
+    transform: rotateX(90deg) translateZ(115px) rotateZ(45deg);
+    box-shadow: 0 0 20px var(--ribbon-color);
+}
+
+.bow::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--ribbon-color);
+    border-radius: 50% 50% 0 50%;
+    transform: rotateZ(90deg);
+}
+
+.gift-box.open .lid {
+    transform: translateY(-500px) rotateX(-120deg) rotateY(120deg) scale(0.2);
+    opacity: 0;
+}
+
+/* Surprise Message Card */
+#surprise-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+    pointer-events: none;
+}
+
+#surprise-message.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.card {
+    background: #fff;
+    color: var(--text-color);
+    padding: 60px;
+    width: 500px;
+    max-width: 90vw;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    border-top: 10px solid var(--box-color);
+}
+
+.surprise-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    color: var(--box-color);
+    margin-bottom: 25px;
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 90;
+}
+
+.glow-burst {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 200px 100px white;
+    opacity: 0;
+    z-index: 95;
+    pointer-events: none;
+}
+
+.glow-burst.flash {
+    animation: flash 1s ease-out forwards;
+}
+
+@keyframes flash {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(120);
+        opacity: 0;
+    }
+}
+
+.shadow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    transform: rotateX(90deg) translateZ(-150px);
+    filter: blur(40px);
+    transition: 1s;
+}
+
+.gift-box.open~.shadow {
+    opacity: 0;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 40px 20px;
+    }
+}

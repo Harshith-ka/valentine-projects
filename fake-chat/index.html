@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Secret Conversation ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&family=Pacifico&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Start Screen Overlay -->
+    <div id="start-screen">
+        <div class="start-box">
+            <h1>You have 1 new message</h1>
+            <p>Tap to open the conversation</p>
+            <button id="start-btn">View Message</button>
+        </div>
+    </div>
+
+    <div class="bg-wallpaper"></div>
+    <div class="background-overlay"></div>
+
+    <div class="chat-container">
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="user-info">
+                <div class="avatar">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
+                        alt="Profile">
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="details">
+                    <h3>Future Wife ❤️</h3>
+                    <p class="status">Online</p>
+                </div>
+            </div>
+            <div class="header-icons">
+                <span class="icon">📞</span>
+                <span class="icon">🎥</span>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages injected here -->
+        </div>
+
+        <!-- Fake Input Bar -->
+        <div class="chat-input" id="chat-input">
+            <div class="input-wrapper">
+                <span class="plus">＋</span>
+                <div class="faux-input">iMessage</div>
+                <div class="mic">🎤</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Surprise Polaroid Reveal -->
+    <div id="final-reveal" class="hidden">
+        <div class="reveal-background"></div>
+        <div class="polaroid-container">
+            <div class="polaroid">
+                <div class="photo">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1000&auto=format&fit=crop"
+                        alt="Our Memory">
+                </div>
+                <div class="caption">
+                    <p>My Soulmate Forever ❤️</p>
+                    <small>February 14, 2026</small>
+                </div>
+            </div>
+            <h1 class="closing-text">I love you more than words can say.</h1>
+            <button onclick="location.reload()" class="restart-btn">Relive our Story</button>
+        </div>
+        <div class="confetti-container" id="confetti"></div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="msg-sent" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+    <audio id="msg-received" src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg"></audio>
+    <audio id="bg-music" loop src="https://www.bensound.com/bensound-music/bensound-love.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

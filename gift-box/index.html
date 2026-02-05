@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise | Gift Box</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="stars"></div>
+    <div class="glow-burst" id="glow"></div>
+
+    <div class="gift-container" id="gift-container">
+        <div class="gift-box" id="clickable-box">
+            <div class="lid">
+                <div class="box-top"></div>
+                <div class="ribbon-v"></div>
+                <div class="ribbon-h"></div>
+                <div class="bow"></div>
+            </div>
+            <div class="box-body">
+                <div class="face box-bottom"></div>
+                <div class="face box-front">
+                    <div class="ribbon-v-body"></div>
+                    <div class="ribbon-h-body"></div>
+                </div>
+                <div class="face box-back">
+                    <div class="ribbon-v-body"></div>
+                    <div class="ribbon-h-body"></div>
+                </div>
+                <div class="face box-left">
+                    <div class="ribbon-v-body"></div>
+                    <div class="ribbon-h-body"></div>
+                </div>
+                <div class="face box-right">
+                    <div class="ribbon-v-body"></div>
+                    <div class="ribbon-h-body"></div>
+                </div>
+            </div>
+            <div class="shadow"></div>
+        </div>
+
+        <p class="instruction">Tap to open your gift!</p>
+    </div>
+
+    <div id="surprise-message" class="hidden">
+        <div class="card">
+            <div class="sparkles">✨</div>
+            <h1 class="surprise-title">Surprise! ❤️</h1>
+            <div class="message-body">
+                <p>To my favorite person,</p>
+                <p>You make every day feel like a celebration. I wanted to give you something special, but no gift could
+                    ever match how much you mean to me.</p>
+                <p>Thank you for being you. You're my greatest treasure! 💎</p>
+                <p class="signature-line">With all my love, <br> <span>Harry</span></p>
+            </div>
+            <button id="close-btn">Close Box</button>
+        </div>
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

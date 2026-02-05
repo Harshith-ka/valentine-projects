@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Unlock | Secret Message</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@200;300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="phone-frame">
+        <div class="wallpaper-container" id="wallpaper"></div>
+
+        <!-- Dynamic Island -->
+        <div class="dynamic-island-container">
+            <div class="dynamic-island" id="island">
+                <div class="island-content hidden" id="island-notif">
+                    <span class="island-icon">❤️</span>
+                    <span class="island-text">Scanning for Love...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lock Screen -->
+        <div id="lock-screen" class="screen">
+            <div class="status-bar">
+                <span class="carrier">Love Network</span>
+                <div class="status-icons">
+                    <span class="wifi-icon">📶</span>
+                    <span class="battery-icon">100% 🔋</span>
+                </div>
+            </div>
+
+            <div class="clock-section">
+                <h1 id="time">00:00</h1>
+                <p id="date">Thursday, February 5</p>
+            </div>
+
+            <div class="notification-teaser">
+                <div class="notif-bubble">
+                    <div class="notif-icon">❤️</div>
+                    <div class="notif-text">
+                        <span class="notif-title">New Reminder</span>
+                        <span class="notif-body">You have a secret message waiting...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lock-shortcuts">
+                <div class="shortcut-btn" id="flashlight-btn">🔦</div>
+                <div class="shortcut-btn" id="camera-btn">📷</div>
+            </div>
+
+            <div class="bottom-section">
+                <div class="swipe-container" id="swipe-track">
+                    <div class="swipe-handle" id="swipe-handle">
+                        <span>›</span>
+                    </div>
+                    <p class="swipe-text">Swipe to open</p>
+                </div>
+                <div class="home-indicator"></div>
+            </div>
+        </div>
+
+        <!-- Home Screen (Revealed) -->
+        <div id="home-screen" class="screen hidden">
+            <div class="home-content">
+                <div class="app-grid">
+                    <div class="app-item" id="message-app">
+                        <div class="app-icon">💌</div>
+                        <span class="app-label">Messages</span>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-icon" style="background: #4cd964;">📷</div>
+                        <span class="app-label">Gallery</span>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-icon" style="background: #ffcc00;">🎵</div>
+                        <span class="app-label">Radio</span>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-icon" style="background: #5856d6;">🧭</div>
+                        <span class="app-label">Maps</span>
+                    </div>
+                </div>
+
+                <div id="hidden-message-overlay" class="hidden">
+                    <div class="message-card">
+                        <h2 class="home-title">Hello, Beautiful 🌹</h2>
+                        <div class="home-message">
+                            <p>I just wanted to remind you how much you mean to me. You're the first thing on my mind
+                                when I wake up and the last before I sleep.</p>
+                            <p>Thank you for being my favorite person. ❤️</p>
+                        </div>
+                        <p class="signature">Forever Yours, <br>Harry</p>
+                        <button id="close-message-btn">Close</button>
+                    </div>
+                </div>
+
+                <div class="dock">
+                    <div class="app-item">
+                        <div class="app-icon" style="background: #007aff;">📞</div>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-icon" style="background: #5ac8fa;">🌐</div>
+                    </div>
+                    <div class="app-item">
+                        <div class="app-icon" style="background: #ff2d55;">💌</div>
+                    </div>
+                </div>
+
+                <button id="relock-btn">Lock Phone</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
